@@ -1,0 +1,79 @@
+DONE--HPKP
+DONE--Content-Security-Policy
+DONE--X-Downloadoptions
+DONE--X-permitted-cross-Domain-Policy
+DONE--Expect-CT
+DONE--Feature-policty
+DONE--Send content-security-policy:defdault-src 'none' header
+
+
+Content-Security-Policy---
+============================
+The HTTP Content-Security-Policy response header allows web site administrators to control resources the user agent is allowed to load for a given page. With a few exceptions, policies mostly involve specifying server origins and script endpoints. This helps guard against cross-site scripting attacks (Cross-site_scripting). 
+
+Content-Security-Policy is the name of a HTTP response header that modern browsers use to enhance the security of the document (or web page). The Content-Security-Policy header allows you to restrict how resources such as JavaScript, CSS, or pretty much anything that the browser loads.
+
+these attacks can be prevented using CSP-
+1) Cross-site-scripting 
+2) Click jacking
+
+Content-Security-Policy has many directives..
+default source is one of them.
+
+content-security-policy:defdault-src 'none' -- default-src
+=============================================================
+The default-src directive defines the default policy for fetching resources such as JavaScript, Images, CSS, Fonts, AJAX requests, Frames, HTML5 Media. Not all directives fallback to default-src. See the Source List Reference for possible values.
+
+
+Source Value 	Example 	Description
+'none' 	object-src 'none' 	Prevents loading resources from any source.
+
+X-Downloadoptions--
+=====================
+The X-Download-Options HTTP header indicates that the browser (Internet Explorer) should not display the option to "Open" a file that has been downloaded from an application, to prevent phishing attacks as the file otherwise would gain access to execute in the context of the application.
+
+The X-Download-Options HTTP response header (supported by Windows Internet Explorer 8 and later).
+
+The HTTP Header X-Download-Options: noopen alters Internet Explorer download dialog by removing the "open with" option. (The only remaining option becomes: "save as" and "cancel")
+
+The X-Download-Options HTTP header has only one option: X-Download-Options: noopen. This is for Internet Explorer from version 8 on to instruct the browser not to open a download directly in the browser but instead to provide only the  Save  option. The user has to first save it and then open it in an application.
+
+
+X-permitted-cross-Domain-Policy--
+===================================
+The X-Permitted-Cross-Domain-Policies header is used to allow PDF and Flash documents for cross-domain requests. The Public-Key-Pins header should be avoided due to its complexity and dwindling browser support.
+
+OWASP specifically states that Adobe's Flash Player and Acrobat PDF Reader use this header and that other web clients could possibly benefit from the header too.
+
+Cross Domain - A form of controlled interface that provides the ability to manually and/or automatically access and/or transfer information between different security domains.
+
+Expect-CT--
+==============
+The Expect-CT header lets sites opt in to reporting and/or enforcement of Certificate Transparency requirements. Certificate Transparency (CT) aims to prevent the use of misissued certificates for that site from going unnoticed.
+
+Deprecated: This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes.
+
+Only Google Chrome and other Chromium-based browsers implemented Expect-CT, and Chromium has deprecated the header from version 107, because Chromium now enforces CT by default. See the Chrome Platform Status update.
+
+
+Feature-policty (Permissions-Policy)--
+==================
+The header has now been renamed to Permissions-Policy in the spec, and this article will eventually be updated to reflect that change.
+
+Uses--
+1) Change the default behavior of autoplay on mobile and third party videos.
+2) Restrict a site from using sensitive devices like the camera, microphone, or speakers.
+3) Ensure images are sized properly and are not too big for the viewport.
+
+Feature Policy allows you to control which origins can use which features, both in the top-level page and in embedded frames. Essentially, you write a policy, which is an allowed list of origins for each feature. For every feature controlled by Feature Policy, the feature is only enabled in the current document or frame if its origin matches the allowed list of origins.
+
+If you do not specify a policy for a feature, then a default allowlist will be used. The default allowlist is specific to each feature.
+
+
+
+
+
+
+
+
+
